@@ -69,3 +69,12 @@
 #card-type{
   font-size: 1rem;
 }
+
+.img-config {
+  height: 180px;
+  width: 125px;
+}
+
+.img-config-2 {
+  height: 100px;
+}
