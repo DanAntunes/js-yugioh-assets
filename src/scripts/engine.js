@@ -13,6 +13,12 @@ const state ={
     player: document.getElementById('player-field-card'),
     computer: document.getElementById('computer-field-card')
   },
+  playerSides:{
+    player1: 'player-cards',
+    playerBox: document.querySelector("#player-cards"),
+    computer: 'computer-cards',
+    computerBox: document.querySelector("#computer-cards"),
+  },
   actions:{
     button:document.getElementById('next-duel'),
   },
@@ -21,7 +27,7 @@ const state ={
 const playerSides = {
   player1: 'player-cards',
   computer: 'computer-cards'
-}
+};
 
 const pathImages = './src/assets/icons/'
 
@@ -96,6 +102,19 @@ async function setCardsField(cardId) {
   await updateScore();
   await drawButton(duelResults);
   
+}
+
+async function removeAllCardsImages() {
+ 
+  // biome-ignore lint/style/useConst: <explanation>
+  let { computerBox, playerBox} = state.playerSides;
+  let imgElements = computerBox.querySelectorAll("img");
+  // biome-ignore lint/complexity/noForEach: <explanation>
+  imgElements.forEach((img) => img.remove());
+
+  imgElements = playerBox.querySelectorAll("img");
+  // biome-ignore lint/complexity/noForEach: <explanation>
+  imgElements.forEach((img) => img.remove());
 }
 
 async function drawSelectCard(index) {
