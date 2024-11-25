@@ -126,7 +126,7 @@ async function checkDuelResults(playerCardId, computerCardId) {
   }
 
     await playAudio(duelResults);
-    
+
     return duelResults;
   
 }
@@ -168,7 +168,6 @@ async function resetDuel() {
 
   init();
 }
-
 async function playAudio(status) {
   const audio = new Audio(`./src/assets/audios/${status}.wav`);
   audio.play();
